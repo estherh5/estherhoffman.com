@@ -1,0 +1,293 @@
+/* Fontello-generated icon font for company logos */
+@font-face {
+  font-family: 'logos';
+  src: url('./fontello-logo-font/logos.eot?88409861');
+  src: url('./fontello-logo-font/logos.eot?88409861#iefix') format('embedded-opentype'),
+       url('./fontello-logo-font/logos.woff?88409861') format('woff'),
+       url('./fontello-logo-font/logos.ttf?88409861') format('truetype'),
+       url('./fontello-logo-font/logos.svg?88409861#logos') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin-bottom: 100px;
+  background-color: #fdf5e7;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  color: #333;
+}
+
+header {
+  max-width: 700px;
+  margin: 0px auto;
+  padding: 0px 50px;
+}
+
+h1, h2, h3 {
+  font-family: 'Karla', sans-serif;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 5em;
+  margin: 55px 0px 40px;
+  color: #55dca6;
+}
+
+.container {
+  max-width: 700px;
+  padding: 0px 50px;
+  margin: 0px auto;
+}
+
+section {
+  padding: 1em 0px 4em;
+  border-top: 1px #E2E2E2 solid;
+}
+
+section:after {
+  display: block;
+  content: " ";
+  clear: both;
+}
+
+h2 {
+  font-size: 3em;
+}
+
+h3 {
+  margin-top: 35px;
+  font-size: 1.5em;
+}
+
+p {
+  line-height: 1.75em;
+  margin: 0px;
+}
+
+#basics .contact:after {
+  display: block;
+  content: " ";
+  clear: both;
+}
+
+#basics .contact .left, #basics .contact .right {
+  width: 100%;
+  margin-top: 15px;
+}
+
+a, em {
+  color: #987e75;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #b7988d;
+}
+
+.item {
+  line-height: 1.75em;
+}
+
+.item strong {
+  min-width: 20%;
+  display: inline-block;
+}
+
+.item + .item {
+  margin-top: 15px;
+}
+
+p.summary {
+  margin-top: 5px;
+  font-style: italic;
+}
+
+ul {
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+ul li {
+  line-height: 1.75em;
+}
+
+.item-title {
+  margin-top: 15px;
+}
+
+.keywords {
+  padding-left: 20px;
+}
+
+.keywords li {
+  display: block;
+}
+
+.small-icon {
+  margin-right: 5px;
+}
+
+.fontello-icon {
+  font-family: 'logos';
+  font-style: normal;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#languages .item strong {
+  display: block;
+}
+
+@media all and (min-width: 700px) {
+  #basics .contact .left {
+    width: 50%;
+    float: left;
+  }
+
+  #basics .contact .right {
+    width: 50%;
+    float: right;
+  }
+
+  #skills .item {
+    width: 30%;
+    margin-top: 0px;
+    margin-left: 5%;
+    float: left;
+  }
+
+  #skills .item:nth-of-type(3n+1) {
+    margin-left: 0px;
+  }
+
+  #interests .item {
+    width: 30%;
+    margin-top: 0px;
+    margin-left: 5%;
+    float: left;
+  }
+
+  #interests .item:nth-of-type(3n+1) {
+    margin-left: 0px;
+    display: block;
+    content: " ";
+    clear: both;
+  }
+
+  #languages .item {
+    width: 20%;
+    margin-top: 0px;
+    margin-left: 5%;
+    float: left;
+  }
+
+  #languages .item:nth-of-type(4n+1) {
+    margin-left: 0px;
+    display: block;
+    content: " ";
+    clear: both;
+  }
+}
+
+@media print {
+  @page {
+    size: 100%;
+    background-color: #ffffff;
+  }
+
+  body {
+    margin-bottom: 0px;
+    font-size: 9px;
+  }
+
+  h1 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 40px;
+    -webkit-print-color-adjust: exact;
+  }
+
+  section {
+    padding-bottom: 20px;
+  }
+
+  h2 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+
+  h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+
+  #basics .contact .left {
+    width: 50%;
+    float: left;
+  }
+
+  a, em {
+    color: #b3b3b3;
+  }
+
+  #basics .contact .right {
+    width: 50%;
+    float: right;
+  }
+
+  ul {
+    margin-top: 10px;
+  }
+
+  .item + .item {
+    margin-top: 10px;
+  }
+
+  .item-title {
+    margin-top: 0px;
+  }
+
+  #skills .item {
+    width: 30%;
+    margin-top: 0px;
+    margin-left: 5%;
+    float: left;
+  }
+
+  #skills .item:nth-of-type(3n+1) {
+    margin-left: 0px;
+  }
+
+  #interests .item {
+    width: 30%;
+    margin-top: 0px;
+    margin-left: 5%;
+    float: left;
+  }
+
+  #interests .item:nth-of-type(3n+1) {
+    margin-left: 0px;
+    display: block;
+    content: " ";
+    clear: both;
+  }
+
+  #languages .item {
+    width: 20%;
+    margin-top: 0px;
+    margin-left: 5%;
+    float: left;
+  }
+
+  #languages .item:nth-of-type(4n+1) {
+    margin-left: 0px;
+    display: block;
+    content: " ";
+    clear: both;
+  }
+}
