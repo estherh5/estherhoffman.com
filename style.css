@@ -301,26 +301,27 @@ li {
     font-size: 9px;
   }
 
-  /* Contact */
+  /* Contact: one flowing line, so ATS parsers read each label beside its
+     value instead of interleaving two columns (TopResume's parse found no
+     contact info in the two-column grid, 2026-09). */
   .contact {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     margin-top: 0;
     font-family: var(--font-sans);
     font-style: normal;
     font-size: 8.6px;
-    gap: 5px 6%;
+    gap: 3px 16px;
   }
 
-  .contact>div {
-    display: grid;
-    gap: 5px;
+  .contact>div,
+  .contact>div+div {
+    display: contents;
   }
 
   .contact .item {
-    display: flex;
-    gap: 10px;
     line-height: 1.5;
+    white-space: nowrap;
   }
 
   .contact .item+.item {
@@ -328,9 +329,8 @@ li {
   }
 
   .contact strong {
-    display: block;
-    flex: 0 0 60px;
     min-width: 0;
+    margin-right: 5px;
     color: var(--muted);
     font-weight: 600;
   }
@@ -404,14 +404,11 @@ li {
     line-height: 1.45;
   }
 
-  .small-icon,
-  .first-icon {
-    width: 1.15em;
-    margin-right: 7px;
-    color: var(--accent-deep);
-    text-align: center;
-    print-color-adjust: exact;
-    -webkit-print-color-adjust: exact;
+  /* Icon fonts export as private-use glyphs that ATS parsers read as junk
+     characters, so the PDF carries no icons. */
+  .keywords .small-icon,
+  .project-skills .first-icon {
+    display: none;
   }
 
   /* Projects */
@@ -426,13 +423,17 @@ li {
     color: var(--muted);
   }
 
-  .project-skills .first-icon {
-    margin-right: 4px;
+  .project-skills .small-icon {
+    /* The source's line break already puts a space before each dot. */
+    margin: 0 6px 0 2px;
+    color: var(--muted);
+    font-style: normal;
   }
 
-  .project-skills .small-icon {
-    margin-right: 4px;
-    margin-left: 9px;
+  .project-skills .small-icon::before {
+    content: "·";
+    font-family: var(--font-sans);
+    font-weight: 400;
   }
 
   #interests {
