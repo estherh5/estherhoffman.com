@@ -7,9 +7,13 @@
   --accent-ink: #178a5c;
   --link: #7a6155;
   --link-hover: #5e463c;
+  --muted: #6f6152;
   --rule: #e2e2e2;
-  --content-width: 700px;
+  --content-width: 640px;
   --page-gutter: 50px;
+  --font-display: "Karla", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 }
 
 *,
@@ -26,8 +30,9 @@ body {
   margin: 0 0 100px;
   background-color: var(--background);
   color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.9rem;
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-optical-sizing: auto;
   text-rendering: optimizeLegibility;
 }
 
@@ -41,24 +46,46 @@ body {
 h1,
 h2,
 h3 {
-  font-family: "Karla", sans-serif;
+  font-family: var(--font-display);
   font-weight: 700;
+  text-wrap: balance;
 }
 
 h1 {
-  margin: 55px 0 40px;
+  margin: 55px 0 0;
   color: var(--accent-ink);
-  font-size: 5em;
+  font-size: 5rem;
   line-height: 1;
+  letter-spacing: -0.025em;
 }
 
 h2 {
-  font-size: 3em;
+  font-size: 2.5rem;
+  letter-spacing: -0.015em;
 }
 
 h3 {
   margin-top: 35px;
-  font-size: 1.5em;
+  font-size: 1.375rem;
+}
+
+.role {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+.resume-link {
+  display: inline-block;
+  /* 14px of padding makes a 44px+ hit area; the margins net to a 14px gap
+     above the text and 40px below. */
+  margin: 0 0 26px;
+  padding-block: 14px;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
 }
 
 section {
@@ -68,7 +95,7 @@ section {
 
 p {
   margin: 0;
-  line-height: 1.75;
+  line-height: 1.6;
 }
 
 a {
@@ -104,7 +131,7 @@ a:focus-visible {
 }
 
 .item {
-  line-height: 1.75;
+  line-height: 1.6;
 }
 
 /* Contact links stand alone on their lines: pad the hit area to fill the
@@ -128,12 +155,50 @@ a:focus-visible {
   font-style: italic;
 }
 
+/* The About paragraph is the page's lede: roman and a step up, since a long
+   italic block reads slowly. Role summaries stay italic. */
+#basics .summary {
+  font-size: 1.1875rem;
+  font-style: normal;
+  line-height: 1.55;
+}
+
+.contact,
+.details,
+.keywords,
+.project-skills {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+}
+
+.details {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.contact strong {
+  color: var(--muted);
+  font-weight: 600;
+}
+
 ul {
   margin: 20px 0 0;
 }
 
 li {
-  line-height: 1.75;
+  line-height: 1.6;
+}
+
+.highlights li + li {
+  margin-top: 6px;
+}
+
+.highlights li::marker {
+  color: var(--accent-ink);
+}
+
+article .summary {
+  margin-top: 10px;
 }
 
 .three-column-grid {
@@ -153,8 +218,11 @@ li {
 .keywords {
   margin-top: 0;
   padding-left: 5px;
-  font-size: 0.85em;
   list-style: none;
+}
+
+.keywords li {
+  line-height: 1.75;
 }
 
 .small-icon {
@@ -163,7 +231,7 @@ li {
 
 .project-skills {
   margin-top: 5px;
-  font-size: 0.85em;
+  color: var(--muted);
 }
 
 .first-icon {
@@ -185,7 +253,11 @@ li {
   }
 
   h1 {
-    font-size: clamp(3.25em, 15vw, 5em);
+    font-size: clamp(3.25rem, 15vw, 5rem);
+  }
+
+  .role {
+    font-size: 1.3125rem;
   }
 
   .contact,
@@ -214,7 +286,7 @@ li {
 
 @media print {
   @page {
-    margin: 0.45in 0.55in;
+    margin: 0.4in 0.55in;
     size: auto;
   }
 
@@ -237,7 +309,7 @@ li {
     margin-bottom: 0;
     color: var(--text);
     font-family: var(--font-serif);
-    font-size: 12px;
+    font-size: 11.8px;
     line-height: 1.42;
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
@@ -253,6 +325,20 @@ li {
     padding-top: 0;
   }
 
+  .role {
+    margin: 3px 0 0;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--muted);
+  }
+
+  /* The PDF is the download; it has no use for a link to itself. */
+  .resume-link {
+    display: none;
+  }
+
   h1 {
     margin: 0 0 2px;
     font-family: var(--font-display);
@@ -265,7 +351,7 @@ li {
   }
 
   section {
-    padding: 8px 0 16px;
+    padding: 8px 0 8px;
     border-top: 1px solid var(--rule);
   }
 
@@ -288,7 +374,7 @@ li {
   }
 
   h3 {
-    margin-top: 9px;
+    margin-top: 7px;
     font-family: var(--font-display);
     font-weight: 700;
     font-size: 15.5px;
@@ -314,8 +400,12 @@ li {
 
   #basics .summary {
     margin: 2px 0 9px;
-    font-size: 13px;
+    font-size: 12.5px;
     line-height: 1.44;
+  }
+
+  #education .summary {
+    margin-bottom: 0;
   }
 
   article .summary,
@@ -376,13 +466,27 @@ li {
     color: var(--muted);
   }
 
+  /* One line per role in the PDF: title · dates · site. The screen keeps the
+     stacked lines. */
+  .details br {
+    display: none;
+  }
+
+  .details > time:first-of-type::before,
+  .details > a::before {
+    content: "·";
+    margin: 0 6px 0 2px;
+    color: var(--muted);
+  }
+
   .highlights {
     margin-top: 5px;
     padding-left: 1.1em;
   }
 
-  .highlights li {
-    margin-top: 2.5px;
+  .highlights li,
+  .highlights li + li {
+    margin-top: 1.5px;
     line-height: 1.4;
     padding-left: 4px;
   }
@@ -394,15 +498,24 @@ li {
   }
 
   /* Skills / Interests grids */
+  /* Skills / Interests print as labeled rows: label left, dotted run right. */
   .three-column-grid {
+    display: block;
+  }
+
+  .three-column-grid .item {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 6%;
-    align-items: start;
+    grid-template-columns: 128px minmax(0, 1fr);
+    gap: 0 10px;
+    align-items: baseline;
+  }
+
+  .three-column-grid .item + .item {
+    margin-top: 3px;
   }
 
   .item-title {
-    margin: 0 0 7px;
+    margin: 0;
     font-family: var(--font-sans);
     font-size: 9.5px;
     font-weight: 700;
@@ -420,11 +533,18 @@ li {
     list-style: none;
   }
 
+  /* Skills flow as dotted runs, not one per line. Each item and its trailing
+     dot stay together, so a wrapped line never opens with a dot. */
   .keywords li {
-    display: flex;
-    align-items: center;
-    margin-top: 2px;
-    line-height: 1.45;
+    display: inline;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+
+  .keywords li:not(:last-child)::after {
+    content: "·";
+    margin: 0 4px 0 5px;
+    color: var(--muted);
   }
 
   /* Icon fonts export as private-use glyphs that ATS parsers read as junk
@@ -441,11 +561,11 @@ li {
   }
 
   #projects .item+.item {
-    margin-top: 9px;
+    margin-top: 7px;
   }
 
   .project-skills {
-    margin-top: 6px;
+    margin-top: 2px;
     font-family: var(--font-sans);
     font-size: 11px;
     color: var(--muted);
@@ -464,6 +584,12 @@ li {
     font-weight: 400;
   }
 
+  /* The PDF is held to two pages: a few bullets and the Interests section
+     are on the site only. */
+  .print-skip {
+    display: none;
+  }
+
   /* The PDF carries a few chosen projects; the site lists them all. */
   #projects article:not(.print-pick) {
     display: none;
@@ -471,13 +597,13 @@ li {
 
   .print-only {
     display: block;
-    margin-top: 10px;
+    margin-top: 7px;
     font-family: var(--font-sans);
     font-style: italic;
     color: var(--muted);
   }
 
-  #interests {
+  #education {
     padding-bottom: 0;
   }
 
@@ -485,6 +611,7 @@ li {
   .three-column-grid,
   .keywords,
   .contact,
+  #work article.item,
   #projects .item,
   #education .item,
   .highlights li {
