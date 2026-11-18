@@ -50,11 +50,13 @@
 .fa-vuejs::before{content:"\f41f"}
 .fa-wikipedia-w::before{content:"\f266"}
 .devicon-amazonwebservices-plain-wordmark::before{content:"\e90c"}
+.devicon-c-plain::before{content:"\e998"}
 .devicon-docker-plain::before{content:"\e9c3"}
 .devicon-flask-original::before{content:"\ea04"}
 .devicon-googlecloud-plain::before{content:"\ea38"}
 .devicon-kubernetes-plain::before{content:"\eabd"}
 .devicon-nextjs-plain::before{content:"\eb14"}
+.devicon-objectivec-plain::before{content:"\eb3b"}
 .devicon-postgresql-plain::before{content:"\eb79"}
 .devicon-sqlite-plain::before{content:"\ec1e"}
 .devicon-tailwindcss-plain::before{content:"\ec39"}
